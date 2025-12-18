@@ -34,18 +34,13 @@ Tools:
 ## Project Structure
 
 CarRental/
-client/ – React frontend
-client/src/
-client/src/assets/ – Images and static assets
-client/src/components/ – Reusable UI components
-client/src/pages/ – Application pages
-client/src/index.css – Global styles (Tailwind)
-client/src/main.jsx – Application entry point
-client/public/
-client/package.json
-server/ – Backend (to be added)
-.gitignore
-README.md
+├── client/ # React frontend
+│ ├── src/
+│ ├── assets/
+│ ├── index.css
+│ └── main.jsx
+├── server/ # Backend (to be added)
+└── README.md
 
 ## Features
 
@@ -68,19 +63,23 @@ Planned:
 
 ## Getting Started (Frontend)
 
-Clone the repository:
-git clone https://github.com/pratyushtak/CarRental_Website.git
+Navigate to the client folder
 
-Navigate to the client folder:
 cd CarRental/client
 
-Install dependencies:
+
+Install dependencies
+
 npm install
 
-Run the development server:
+
+Run the development server
+
 npm run dev
 
-Open in browser:
+
+Open browser at:
+
 http://localhost:5173
 
 ## Styling
