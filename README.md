@@ -33,14 +33,23 @@ Tools:
 
 ## Project Structure
 
+## Project Structure
+
+```bash
 CarRental/
-├── client/ # React frontend
-│ ├── src/
-│ ├── assets/
-│ ├── index.css
-│ └── main.jsx
-├── server/ # Backend (to be added)
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── assets/          # Images, icons, static assets
+│   │   ├── components/      # Reusable UI components (Navbar, etc.)
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.css            # Global styles + Tailwind theme
+│   ├── index.html
+│   └── package.json
+├── server/                 # Backend (to be added)
 └── README.md
+```
+
 
 ## Features
 
