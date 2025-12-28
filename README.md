@@ -78,7 +78,7 @@ cd CarRental/client
 
 
 Install dependencies
-
+```bash
 npm install
 
 
@@ -90,7 +90,7 @@ npm run dev
 Open browser at:
 
 http://localhost:5173
-
+```
 ## Styling
 
 The project uses Tailwind CSS v4 for utility-first styling along with custom theme variables to maintain consistent design across the application.
