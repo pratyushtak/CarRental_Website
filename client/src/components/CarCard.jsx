@@ -15,7 +15,7 @@ const CarCard = ({car}) => {
           group-hover:scale-105'/>
 
 
-          {car.isAvailable && <p className='absolute top-4 left-4 bg-primary/90 text-white 
+          {car.isAvaliable && <p className='absolute top-4 left-4 bg-primary/90 text-white 
           text-xs px-2.5 py-1 rounded-full'>
             Available Now
           </p>}
