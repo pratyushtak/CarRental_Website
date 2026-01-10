@@ -16,6 +16,10 @@ const CarDetails = () => {
   setCar(dummyCarData.find(car => car._id === id))
   }, [id])
 
+  const formatPrice = (price) => {
+  return new Intl.NumberFormat('en-IN').format(price)
+}
+
   return car ? (
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-16">
       <button
@@ -88,7 +92,7 @@ const CarDetails = () => {
         <form onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
           
           <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>
-            {currency}{car.pricePerDay}
+            {currency}{formatPrice(car.pricePerDay)}
             <span className='text-base text-gray-400 font-normal'>per day</span>
           </p>
 

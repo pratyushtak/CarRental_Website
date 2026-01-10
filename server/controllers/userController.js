@@ -1,6 +1,7 @@
 import User from '../models/User.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import Car from '../models/Car.js'
 
 // Genarate JWT Token
 const generateToken = (userID)=>{
@@ -31,7 +32,7 @@ export const registerUser = async (req, res)=>{
         const hashedPassword = await bcrypt.hash(password, 10)
         const user = await User.create({name, email, password : hashedPassword});
         const token = generateToken(user._id.toString());
-        res.json({success: true, token})
+        res.json({success: true, token, message: "Successfully Registered"})
     }
     catch (error){
         console.log(error.message)
@@ -79,7 +80,7 @@ export const loginUser = async (req, res)=>{
             });
         }
         const token = generateToken(user._id.toString());
-        res.json({success: true, token});
+        res.json({success: true, token, message: "Successfuly Logged In"});
 
     } catch (error) {
         console.log(error.message)
@@ -103,4 +104,15 @@ export const getUserData = async (req, res)=>{
                 message: error.message
             })
     }
+}
+
+// Get All Cars for the Frontend
+export const getCars = async (req, res) => {
+  try {
+    const cars = await Car.find({ isAvailable: true })
+    res.json({ success: true, cars })
+  } catch (error) {
+    console.log(error.message);
+    res.json({ success: false, message: error.message })
+  }
 }

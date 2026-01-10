@@ -6,6 +6,9 @@ const CarCard = ({car}) => {
 
   const currency = import.meta.env.VITE_CURRENCY
   const navigate = useNavigate()
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-IN').format(price)
+  }
 
   return (
     <div className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1
@@ -22,7 +25,7 @@ const CarCard = ({car}) => {
 
           <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-white
             px-3 py-2 rounded-lg">
-              <span className='font-semibold'>{currency}{car.pricePerDay}</span>
+              <span className='font-semibold'>{currency}{formatPrice(car.pricePerDay)}</span>
               <span className='text-sm text-white/80'> / day</span>
         </div>
       </div>

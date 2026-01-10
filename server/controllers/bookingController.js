@@ -126,7 +126,7 @@ export const getOwnerBookings = async (req, res)=>{
         
         res.json({
             success: true,
-            message: bookings
+            bookings
         })
 
     } catch (error) {

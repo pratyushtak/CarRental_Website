@@ -93,7 +93,7 @@ export const toggleCarAvailability = async(req, res)=>{
         await car.save();
 
 
-        res.json({success: true, cars});
+        res.json({success: true, car, message: "Availibility Toggeled"});
     } catch (error) {
         console.log(error.message)
         res.json({
@@ -186,6 +186,7 @@ export const getDashboardData = async (req, res)=>{
 export const updateUserImage = async (req, res)=>{
     try {
         const imageFile = req.file; //Added image in req in middleware by multer
+        const {_id} = req.user;
 
         
         const fileBuffer = fs.readFileSync(imageFile.path);
