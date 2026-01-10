@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import Car from "../models/Car.js";
 import fs from 'fs'
 import imagekit from "../configs/imageKit.js";
+import Booking from "../models/Booking.js";
 
 // API to change role of User
 export const changeRoleToOwner = async (req, res)=>{
@@ -145,6 +146,70 @@ export const getDashboardData = async (req, res)=>{
         }
 
         const cars = await Car.find({owner: _id})
+        const bookings = await Booking.find({owner: _id}).populate('car').sort({createdAt: -1});
+        
+        const pendingBookings = await Booking.find({ owner: _id, status: "pending"})
+        const completedBookings = await Booking.find({ owner: _id, status: "confirmed"})
+
+
+        // Calculating monthly revenew for owner
+        const monthlyRevenue = bookings
+        .slice()
+        .filter(booking => booking.status === 'confirmed')
+        .reduce((acc, booking) => acc + booking.price, 0);
+
+        const dashboardData = {
+            totalCars: cars.length,
+            totalBookings: bookings.length,
+            pendingBookings: pendingBookings.length,
+            completedBookings: completedBookings.length,
+            recentBookings: bookings.slice(0, 3),
+            monthlyRevenue: monthlyRevenue
+        } 
+
+        res.json({
+            success: true,
+            dashboardData
+        });
+
+    } catch (error) {
+        console.log(error.message)
+        res.json({
+                success: false,
+                message: error.message
+            })
+    }
+}
+
+
+// API to update user Image
+export const updateUserImage = async (req, res)=>{
+    try {
+        const imageFile = req.file; //Added image in req in middleware by multer
+
+        
+        const fileBuffer = fs.readFileSync(imageFile.path);
+        const response = await imagekit.upload({
+            file: fileBuffer,
+            fileName: imageFile.originalname,
+            folder: "/cars"
+        });
+        // response.url is also url  but we need a optimized one
+        var optimizedImageUrl = imagekit.url({
+            path: response.filePath,
+            transformation: [
+                { width: "1280" },
+                { quality: "auto" },
+                { format: "webp" }
+            ]
+        });
+        const image = optimizedImageUrl;
+
+        await User.findByIdAndUpdate(_id, {image});
+        res.json({
+            success: true,
+            message: "Image Updated"
+        })
     } catch (error) {
         console.log(error.message)
         res.json({
