@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 
 const Newsletter = () => {
 
+    const [mailID, setMailID] = useState('');
+
     const submitHandler = ((e)=>{
         e.preventDefault();
         toast.success('You’re now subscribed to our newsletter.')
+        setMailID('')
     })
   return (
     <div className="flex flex-col items-center justify-center text-center space-y-2 max-md:px-4 my-10 mb-40">
@@ -19,6 +22,8 @@ const Newsletter = () => {
                     type="email"
                     placeholder="Enter your email id"
                     required
+                    value={mailID}
+                    onChange={(e)=>setMailID(e.target.value)}
                 />
                 <button type="submit" className="md:px-12 px-8 h-full text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer rounded-md rounded-l-none">
                     Subscribe

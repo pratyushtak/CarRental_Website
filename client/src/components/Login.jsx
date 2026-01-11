@@ -42,16 +42,16 @@ const Login = ({}) => {
             {state === "register" && (
                 <div className="w-full">
                     <p>Name</p>
-                    <input onChange={(e) => setName(e.target.value)} value={name} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="text" required />
+                    <input onChange={(e) => setName(e.target.value)} value={name} placeholder="Enter your name" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="text" required />
                 </div>
             )}
             <div className="w-full ">
                 <p>Email</p>
-                <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="email" required />
+                <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="Enter your email" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="email" required />
             </div>
             <div className="w-full ">
                 <p>Password</p>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="password" required />
+                <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Enter your password" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="password" required />
             </div>
             {state === "register" ? (
                 <p>
