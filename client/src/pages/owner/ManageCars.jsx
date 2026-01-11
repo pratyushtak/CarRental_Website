@@ -62,7 +62,7 @@ const ManageCars = () => {
 
   useEffect(()=>{
     fetchOwnerCars();
-  }, [])
+  }, [cars, isOwner])
 
   return (
     <div className='px-4 pt-10 md:px-10 w-full'>

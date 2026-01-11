@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 const ManageBookings = () => {
 
-  const {axios, currency} = useAppContext();
+  const {axios, currency, isOwner, cars} = useAppContext();
   const [bookings, setBookings] = useState([])
 
 
@@ -45,7 +45,7 @@ const changeBookingStatus = async (bookingId, status) => {
 
   useEffect(() => {
     fetchOwnerBookings()
-  }, [])
+  }, [isOwner, cars])
 
   return (
     <div className='px-4 pt-10 md:px-10 w-full'>

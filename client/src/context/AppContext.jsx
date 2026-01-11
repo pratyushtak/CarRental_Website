@@ -13,6 +13,7 @@ export const AppProvider = ({children})=>{
     const navigate = useNavigate();
     const currency = import.meta.env.VITE_CURRENCY
 
+    const [input, setInput] = useState('')
     const [token, setToken] = useState(null);
     const [user, setUser] = useState(null);
     const [isOwner, setIsOwner] = useState(false);
@@ -73,6 +74,8 @@ export const AppProvider = ({children})=>{
     }, [token])
 
     const value = {
+        input,
+        setInput,
         navigate,
         currency,
         axios,

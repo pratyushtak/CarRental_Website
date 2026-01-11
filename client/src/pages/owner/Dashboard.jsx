@@ -17,7 +17,7 @@ const Dashboard = () => {
         pendingBookings: 0,
         completedBookings: 0,
         recentBookings:[],
-        monthlyRevenew: 0
+        monthlyRevenue: 0
     })
 
     const dashboardCard = [
