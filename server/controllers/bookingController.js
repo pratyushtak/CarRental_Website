@@ -67,6 +67,13 @@ export const createBooking = async(req, res)=>{
     const picked = new Date(pickupDate);
     const returned = new Date(returnDate);
 
+    if (returned <= picked) {
+      return res.json({
+        success: false,
+        message: "Return date must be after pickup date"
+      });
+    }
+
     const noOfDays = Math.ceil(
       (returned - picked) / (1000 * 60 * 60 * 24)
     );

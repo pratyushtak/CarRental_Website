@@ -52,7 +52,7 @@ const Navbar = ({}) => {
         }>
           {menuLinks.map((link, index)=>
           (
-            <Link key = {index} to={link.path} onClick={()=> navigate('/')}>
+            <Link key = {index} to={link.path} onClick={() => setOpen(false)} >
               {link.name}
             </Link>
           ))}
@@ -66,7 +66,7 @@ const Navbar = ({}) => {
         
           <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
               <button onClick={()=> {isOwner ? navigate('/owner'): changeRole()}} className='cursor-pointer'>{isOwner ? 'Dashboard' : 'List Cars'}</button>
-              <button onClick={()=> {user ? logout(): setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg'>{user ? 'Logout' : 'Login'}</button>
+              <button onClick={()=> {setOpen(false); user ? logout(): setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg'>{user ? 'Logout' : 'Login'}</button>
           </div>
 
         </div>

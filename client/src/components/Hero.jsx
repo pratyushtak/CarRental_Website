@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { assets, cityList } from '../assets/assets'
 import {useAppContext} from '../context/AppContext.jsx'
+import toast from 'react-hot-toast';
 
 const Hero = () => {
     const [pickupLocation, setPickupLocation] = useState('');
@@ -8,6 +9,10 @@ const Hero = () => {
 
     const handleSearch = (e)=>{
         e.preventDefault();
+        if(pickupDate>returnDate){
+            toast.error('Return date must be after pickup date')
+            return;
+        }
         navigate('/cars?pickupLocation='+pickupLocation+'&pickupDate=' + pickupDate + '&returnDate=' + returnDate);
 
     }
