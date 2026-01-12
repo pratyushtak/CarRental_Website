@@ -9,7 +9,7 @@ const Hero = () => {
 
     const handleSearch = (e)=>{
         e.preventDefault();
-        if(pickupDate>returnDate){
+        if(pickupDate>=returnDate){
             toast.error('Return date must be after pickup date')
             return;
         }
