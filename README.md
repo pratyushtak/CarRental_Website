@@ -86,13 +86,10 @@ npm run dev
 
 📌 Future Enhancements
 
-Payment gateway integration
-
-Advanced search and filters
-
-Admin dashboard
-
-Email notifications
+- Payment gateway integration
+- Advanced search and filters
+- Admin dashboard
+- Email notifications
 
 👤 Author
 
