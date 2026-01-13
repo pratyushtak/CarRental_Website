@@ -37,16 +37,17 @@ A full-stack car rental web application that allows users to browse available ca
 
 ---
 
-## 📂 Project Structure
+📂 Project Structure
 
+'''
 CarRental_Website/
 │
-├── client/         # Frontend (React)
+├── client/                 # Frontend (React)
 │   ├── src/
 │   ├── public/
 │   └── package.json
 │
-├── server/         # Backend (Node + Express)
+├── server/                 # Backend (Node + Express)
 │   ├── models/
 │   ├── routes/
 │   ├── controllers/
@@ -54,27 +55,29 @@ CarRental_Website/
 │   └── package.json
 │
 └── README.md
+'''
 
+🚀 Setup & Run Locally
 Clone the Repository
+'''
 git clone https://github.com/pratyushtak/CarRental_Website.git
 cd CarRental_Website
+'''
 
 Backend Setup
+'''
 cd server
 npm install
 npm run dev
+'''
 
-
+'''
 Backend runs on:
-
 http://localhost:5000
-
+'''
+'''
 Frontend Setup
 cd client
 npm install
 npm run dev
-
-
-Frontend runs on:
-
-http://localhost:5173
+'''
