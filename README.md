@@ -68,7 +68,7 @@ Backend Setup
 ```
 cd server
 npm install
-npm run dev
+npm run server
 ```
 
 
@@ -83,3 +83,18 @@ cd client
 npm install
 npm run dev
 ```
+
+📌 Future Enhancements
+
+Payment gateway integration
+
+Advanced search and filters
+
+Admin dashboard
+
+Email notifications
+
+👤 Author
+
+Pratyush Tak
+GitHub: https://github.com/pratyushtak
