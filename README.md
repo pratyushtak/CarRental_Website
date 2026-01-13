@@ -1,129 +1,80 @@
-# Car Rental Website – MERN Stack 🚗
+# 🚗 Car Rental Website
 
-A full-stack Car Rental Web Application built using the MERN stack. This project is being developed to gain hands-on experience with modern frontend tooling, scalable project architecture, and real-world full-stack development practices.
+A full-stack car rental web application that allows users to browse available cars, book rentals, and manage bookings with secure authentication and role-based access.
 
-🚧 Project Status: Actively in development
+🔗 **Live Demo:** https://car-rental-seven-xi-49.vercel.app/  
+📦 **GitHub Repo:** https://github.com/pratyushtak/CarRental_Website
 
-## Project Overview
+---
 
-The Car Rental Website allows users to browse available cars, view car details, and make bookings through a clean and responsive user interface. The project follows industry-standard separation of concerns by maintaining separate frontend (client) and backend (server) layers.
+## ✨ Features
 
-This project is part of my learning journey toward becoming a Full Stack Developer and preparing for internships and placements.
+- User authentication and authorization (JWT-based)
+- Role-based access (User / Owner)
+- Browse available cars with complete details
+- Book cars for selected dates
+- Real-time availability checks
+- Manage bookings (view & cancel)
+- Responsive and mobile-friendly UI
 
-## Tech Stack
+---
 
-Frontend:
-- React (with Vite)
-- Tailwind CSS (v4)
-- React Router DOM
-- JavaScript (ES6+)
+## 🛠 Tech Stack
 
-Backend (In Progress):
+### Frontend (`client`)
+- React
+- Tailwind CSS
+- Axios
+- React Router
+
+### Backend (`server`)
 - Node.js
 - Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Image Kit (image uploads)
 
-Database (Planned):
-- MongoDB (MongoDB Atlas)
+---
 
-Tools:
-- Git & GitHub
-- npm
-- Vite
-- Environment Variables (.env)
+## 📂 Project Structure
 
-## Project Structure
-
-## Project Structure
-
-```bash
-CarRental/
-├── client/                 # React frontend
+CarRental_Website/
+│
+├── client/         # Frontend (React)
 │   ├── src/
-│   │   ├── assets/          # Images, icons, static assets
-│   │   ├── components/      # Reusable UI components (Navbar, etc.)
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── index.css            # Global styles + Tailwind theme
-│   ├── index.html
+│   ├── public/
 │   └── package.json
-├── server/                 # Backend (to be added)
+│
+├── server/         # Backend (Node + Express)
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   └── package.json
+│
 └── README.md
-```
 
+Clone the Repository
+git clone https://github.com/pratyushtak/CarRental_Website.git
+cd CarRental_Website
 
-## Features
-
-Current:
-- Modern React setup using Vite
-- Tailwind CSS styling with theme variables
-- Client-side routing using React Router
-- Organized asset management
-- Clean and scalable folder structure
-
-Planned:
-- User authentication (Login / Signup)
-- Browse and search cars
-- Car booking system
-- Booking history
-- Admin dashboard
-- Backend REST APIs
-- MongoDB integration
-- Deployment (Frontend and Backend)
-
-## Getting Started (Frontend)
-
-Navigate to the client folder
-
-cd CarRental/client
-
-
-Install dependencies
-```bash
+Backend Setup
+cd server
 npm install
-
-
-Run the development server
-
 npm run dev
 
 
-Open browser at:
+Backend runs on:
+
+http://localhost:5000
+
+Frontend Setup
+cd client
+npm install
+npm run dev
+
+
+Frontend runs on:
 
 http://localhost:5173
-```
-## Styling
-
-The project uses Tailwind CSS v4 for utility-first styling along with custom theme variables to maintain consistent design across the application.
-
-## Environment Variables
-
-Sensitive files such as .env are not committed to the repository. Create a .env file inside the client folder when required.
-
-Example:
-VITE_API_URL=
-
-## Development Practices
-
-- Modular component-based architecture
-- Centralized asset management
-- Clean Git commit history
-- Ignoring auto-generated and sensitive files (node_modules, .env, dist)
-
-## Learning Goals
-
-- Understand full-stack application architecture
-- Build scalable React applications
-- Learn Tailwind CSS and modern styling practices
-- Develop backend APIs using Node and Express
-- Prepare real-world projects for placements
-
-## Author
-
-Pratyush Tak  
-B.Tech – Electronics & Communication Engineering  
-Aspiring Full Stack Developer  
-GitHub: https://github.com/pratyushtak
-
-## License
-
-This project is developed for educational and learning purposes.
